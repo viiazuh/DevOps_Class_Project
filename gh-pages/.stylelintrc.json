@@ -1,6 +1,9 @@
 {
   "extends": "stylelint-config-standard",
+  "ignoreFiles": ["**/*.min.css"],
   "rules": {
-    "at-rule-no-unknown": null
+    "indentation": 2,
+    "string-quotes": "double",
+    "color-hex-case": "lower"
   }
 }
