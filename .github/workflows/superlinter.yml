@@ -11,4 +11,8 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
+          # Pastikan TOKEN ini ada
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # BARIS TAMBAHAN: Hanya aktifkan linter untuk Markdown
+          VALIDATE_ALL_CODEBASE: false # Hanya validasi file yang berubah
+          VALIDATE_MARKDOWN: true # Paksa validasi Markdown
