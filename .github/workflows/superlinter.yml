@@ -1,18 +1,16 @@
-name: Super-Linter
-on: push
+name: Super-Linter # Baris 29
+on: push # Baris 30 (Workflow berjalan saat ada 'push' ke repo)
 
 jobs:
-  super-lint:
-    runs-on: ubuntu-latest
+  super-lint: # Baris 31
+    runs-on: ubuntu-latest # Baris 33
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout code # Baris 34
+        uses: actions/checkout@v2 # Baris 35
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
-        env:
-          # Pastikan TOKEN ini ada
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # BARIS TAMBAHAN: Hanya aktifkan linter untuk Markdown
-          VALIDATE_ALL_CODEBASE: false # Hanya validasi file yang berubah
-          VALIDATE_MARKDOWN: true # Paksa validasi Markdown
+      - name: Run Super-Linter # Baris 36
+        uses: github/super-linter@v4 # Baris 37
+        env: # Baris 43
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Baris 45 (Ini adalah secret default GitHub)
+          # Anda juga dapat menambahkan variabel ENV_TO_PASS jika diperlukan, seperti:
+          # DEFAULT_BRANCH: master
